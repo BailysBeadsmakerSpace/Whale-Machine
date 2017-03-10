@@ -8,7 +8,10 @@
 	$userid=$_POST['userid'];
 	$cardid=$_POST['username'];
 	$pass=$_POST['password'];
-	$conn=mysql_connect("localhost","root","admin");
+	$host="localhost"; //主机地址
+	$DB_Name=""; //数据库账户
+	$DB_Pass=""; //数据库密码
+	$conn=mysql_connect($host,$DB_Name,$DB_Pass);
 	mysql_select_db("US");
 	mysql_query("set names utf8");
 	$sql="select * from us where cardid='{$cardid}' and pass='{$pass}'";
